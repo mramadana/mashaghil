@@ -1,0 +1,49 @@
+@import "variables";
+
+
+// start to static header
+.auth-background {
+    background-color: #F8CEC5;
+    padding: 120px 0;
+    overflow-y: auto;
+    height: 100vh;
+    @media (max-width: $screen-md) {
+        padding: 80px 0;
+    }
+    &.default-height {
+        height: auto;
+    }
+}
+
+.custom-layout {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px gray;
+}
+
+.custom-form-width {
+    width: 620px;
+    max-width: 100%;
+}
+
+.custom-form {
+    .head-form {
+        text-align: center;
+        margin-bottom: 40px;
+        .form-logo {
+            height: 110px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            @media (max-width: $screen-xs) {
+              height: 70px;
+            }
+        }
+    }
+}
+
+.form-padding {
+    padding: 50px 45px;
+    @media (max-width: $screen-xs) {
+        padding: 25px 15px;
+    }
+}

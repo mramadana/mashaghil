@@ -260,10 +260,9 @@
         })
     </script>
 
+
     <script>
         $(document).ready(function () {
-
-
 
             $(document).on('click', ".single_btn_tab", function () {
                 $(".single_btn_tab").removeClass('active')
@@ -272,11 +271,16 @@
                 let datalink = $(this).data('link')
                 if (datalink) {
                     $(".first_status").removeClass('d-none')
-                    $(".sec_status").addClass('d-none')
+                    $(".sec_status").addClass('d-none');
+                    $(".sec_status ").addClass('d-none');
+                    $(".sec_status input, .sec_status select").prop('disabled', true);
+                    $(".first_status input, .first_status select").prop('disabled', false);
 
-                } else if(dataId) {
+                } else if (dataId) {
                     $(".first_status").addClass('d-none')
                     $(".sec_status").removeClass('d-none')
+                    $(".first_status input, .first_status select").prop('disabled', true);
+                    $(".sec_status input, .sec_status select").prop('disabled', false);
                 }
 
             })

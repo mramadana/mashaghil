@@ -17,6 +17,76 @@
     <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
 
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- <style>
+        .img_profile .upload-preview {
+            margin-top: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .img_profile .upload-preview img {
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        .single-img-uploader .upload-preview {
+            max-width: 100%;
+            transition: 0.3s;
+        }
+
+        .img_profile label {
+            margin: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: green;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .img_profile .edit-icon {
+            color: #7367F0;
+            font-size: 20px;
+            position: static;
+        }
+
+        .img_profile {
+            position: relative;
+                width: 90px;
+                height: 70px;
+        }
+
+        .custom-style {
+            position: absolute;
+            top: 3px;
+            background-color: #7367F0;
+            color: #fff;
+            font-size: 12px;
+            padding: 5px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            z-index: 555;
+            cursor: pointer;
+        }
+
+        .remove-img {
+            left: 2px;
+        }
+
+        .check-btn i {
+            right: 2px;
+        }
+    </style> -->
 </head>
 
 
@@ -380,7 +450,8 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label for="" class="label">الموقع علي الخريطة</label>
-                                    <input type="text" class="main-input map-input" data-toggle="modal" data-target="#staticBackdrop_4" placeholder="ادخل الموقع" readonly>
+                                    <input type="text" class="main-input map-input" data-toggle="modal"
+                                        data-target="#staticBackdrop_4" placeholder="ادخل الموقع" readonly>
                                 </div>
                             </div>
 
@@ -434,7 +505,7 @@
                                     <div class="uploader_img"></div>
                                 </div>
                             </div>
-   
+
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label for="" class="label">رقم الايبان ( اختياري )</label>
@@ -482,6 +553,45 @@
                                         <span></span>
                                     </button>
                                 </div>
+                            </div>
+
+
+
+                            <div class="col-12 mt-4">
+                                <div class="single-img-uploader form-group">
+                                    <div class="img_profile">
+                                        <label class="upload-label-2">
+                                            <i class="far fa-edit edit-icon"></i>
+                                            <input type="file" class="d-none">
+                                            <span class="dn-input"></span>
+                                        </label>
+                                        <div class="uploader_img"></div>
+                                    </div>
+                                </div>
+                                <div class="single-img-uploader form-group">
+                                    <div class="img_profile">
+                                        <label class="upload-label-2">
+                                            <i class="far fa-edit edit-icon"></i>
+                                            <input type="file" class="d-none">
+                                            <span class="dn-input"></span>
+                                        </label>
+                                        <div class="uploader_img"></div>
+                                    </div>
+                                </div>
+
+                                <div class="preview-section-img form-group">
+                                    <label for="" class="label">صورة الهوية
+                                    </label>
+                                    <div class="img-uploader profile-img-upload">
+                                        <label class="upload-label main-input">
+                                            <input type="file" class="hidden-input" multiple>
+                                            <span class="dn-input"></span>
+                                            <i class="fas fa-camera icon"></i>
+                                        </label>
+                                    </div>
+                                    <div class="img-preview flex-wrap d-flex align-items-center"></div>
+                                </div>
+
                             </div>
 
                         </div>
@@ -621,6 +731,14 @@
                 }
             });
         }
+    </script>
+
+
+    <script>
+        $(document).on('click', ".img_profile .submit-image", function() {
+            console.log("loooool1");
+            console.log($(this).parents('.img_profile').find("input").val());
+        })
     </script>
 </body>
 

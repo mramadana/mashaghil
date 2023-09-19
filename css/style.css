@@ -215,6 +215,25 @@ input:focus {
   }
 }
 
+.tabsBtns .custom-btn {
+  background-image: linear-gradient(to top, #c2c2c2, #c2c2c2);
+}
+.tabsBtns .custom-btn:hover .bt-text {
+  color: #000 !important;
+}
+.tabsBtns .custom-btn .bt-text {
+  color: #000;
+}
+.tabsBtns .single_btn_tab.active {
+  background-image: linear-gradient(to top, #161b4b, #161b4b);
+}
+.tabsBtns .single_btn_tab.active .bt-text {
+  color: #fff;
+}
+.tabsBtns .single_btn_tab.active:hover .bt-text {
+  color: #fff !important;
+}
+
 body {
   background-color: #f3f4f6;
   /* Track */

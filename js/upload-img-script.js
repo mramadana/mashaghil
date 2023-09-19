@@ -14,11 +14,11 @@ $(".profile-img-upload input").on("change", function (event) {
         reader.onerror = (error) => reject(error);
       }).then(function (result) {
         let item = "";
-        item += `<div class="uploaded">`;
-        item += `<i class="fas fa-times remove-appendedd"></i>`;
-        item += `<a href='${result}' + data-fancybox="gallery"></a><img src="${result}">`;
-        item += `<input type="hidden" name="image[]" value="${result}" >`;
-        item += `</div>`;
+        item = `<div class="uploaded">
+         <i class="fas fa-times remove-appendedd"></i>
+         <a href='${result}' + data-fancybox="gallery"></a><img src="${result}">
+         <input type="hidden" name="image[]" value="${result}" >
+         </div> `
         selectedImg.append(item);
       });
     };
@@ -27,34 +27,30 @@ $(".profile-img-upload input").on("change", function (event) {
 });
 
 let profile_icon = () => {
-  if ($(".img_profile .upload-preview").length > 0){
-    $(".img_profile .edit-icon").addClass("unactive")
+  if ($(".img_profile .upload-preview").length > 0) {
+    $(".img_profile .edit-icon").addClass("unactive");
   } else {
-    $(".img_profile .edit-icon").removeClass("unactive")
+    $(".img_profile .edit-icon").removeClass("unactive");
   }
-}
+};
 
 // upload single img
 
 $(document).on("change", ".single-img-uploader input", function (event) {
-
   $(this).parents(".single-img-uploader").find(".upload-preview").remove();
   var single_append = $(this)
     .parents(".single-img-uploader")
     .find(".uploader_img");
   if (event.target.files.length > 0) {
     $(single_append).append(
-      '<div class="upload-preview"><a href="' +
-        URL.createObjectURL(event.target.files[0]) +
-        '" data-fancybox="gallery"></a><img src="' +
-        URL.createObjectURL(event.target.files[0]) +
-        '"><i class="fas fa-times remove-img"></i></div>'
+      `<div class="upload-preview"><a href="${URL.createObjectURL(event.target.files[0])}" data-fancybox="gallery"></a>
+      <img src= "${URL.createObjectURL(event.target.files[0])}"> 
+      <i class="fas fa-times remove-img custom-style"></i>
+      </div>`
     );
   }
 
-  profile_icon()
-
-
+  profile_icon();
 });
 
 // remove multiple img
@@ -68,5 +64,5 @@ $(document).on("click", ".remove-img", function () {
   $(this).parents(".upload-preview").remove();
   $(".single-img-uploader input").val("");
 
-  profile_icon()
+  profile_icon();
 });

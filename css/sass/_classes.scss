@@ -47,3 +47,31 @@
         padding: 25px 15px;
     }
 }
+
+.tabsBtns {
+    .custom-btn {
+        background-image: linear-gradient(to top, #c2c2c2, #c2c2c2);
+        &:hover {
+            .bt-text {
+                color: #000 !important;
+            }
+        }
+        .bt-text {
+            color: #000;
+        }
+    }
+    .single_btn_tab {
+        &.active {
+            background-image: linear-gradient(to top, #161b4b, #161b4b);
+            .bt-text {
+                color: #fff;
+            }
+
+            &:hover {
+                .bt-text {
+                    color: #fff !important;
+                }
+            }
+        }
+    }
+}
